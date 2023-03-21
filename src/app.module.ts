@@ -7,6 +7,7 @@ import { ConfigModule } from '@/config/config.module';
 import { ConfigService } from '@/config/config.service';
 import { GroupRoleModule } from '@/modules/groupRole/groupRole.module';
 import { RoleModule } from '@/modules/role/role.module';
+import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { RoleModule } from '@/modules/role/role.module';
     }),
     GroupRoleModule,
     RoleModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

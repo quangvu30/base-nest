@@ -7,7 +7,7 @@ export type RoleDocument = HydratedDocument<Role>;
 @Schema()
 export class Role {
   @Prop({ type: Types.ObjectId, ref: 'GroupRole' })
-  groupRole: GroupRole;
+  groupRole: string;
 
   @Prop({ type: Types.ObjectId })
   parent: string;

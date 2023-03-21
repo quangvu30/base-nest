@@ -18,4 +18,9 @@ export class GroupRoleService {
     const groupRole = await this.groupRoleRepository.getGroupRoleById(id);
     return groupRole;
   }
+
+  async getListGroupRole() {
+    const list = await this.groupRoleRepository.getListGroupRole();
+    return list;
+  }
 }

@@ -15,6 +15,9 @@ export class User {
   name: string;
 
   @Prop()
+  password: string;
+
+  @Prop()
   birthday: Date;
 
   @Prop({ type: [{ type: Types.ObjectId, ref: 'Role' }] })

@@ -25,4 +25,12 @@ export class RoleRepository {
     }
     return role;
   }
+
+  async getRoleByName(name: string) {
+    const role = await this.roleModel.findOne({ name });
+    if (!role) {
+      return new Error('Role not found');
+    }
+    return role;
+  }
 }

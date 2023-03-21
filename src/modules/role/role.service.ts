@@ -3,7 +3,6 @@ import * as _ from 'lodash';
 
 import { RoleRepository } from '@/schema/repository/role.repo';
 import { CreateRole } from './dto/createRole.dto';
-import { Role } from '@/schema/models/role.model';
 import { GroupRoleService } from '@/modules/groupRole/groupRole.service';
 
 @Injectable()
@@ -18,12 +17,14 @@ export class RoleService {
       createRoleDto.groupRole,
     );
     if (!_.isError(groupRole)) {
-      const role = await this.roleRepository.createRole({
-        ...createRoleDto,
-        groupRole,
-      });
+      const role = await this.roleRepository.createRole(createRoleDto);
       return role;
     }
     return groupRole;
+  }
+
+  async getRoleByName(name: string) {
+    const role = await this.roleRepository.getRoleByName(name);
+    return role;
   }
 }

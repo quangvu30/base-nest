@@ -15,10 +15,10 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
+  it('/ (GET group-role)', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .get('/group-role')
       .expect(200)
-      .expect('Hello World!');
+      .expect((res) => res.body.status === 1);
   });
 });

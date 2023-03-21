@@ -25,4 +25,9 @@ export class GroupRoleRepository {
     }
     return groupRole;
   }
+
+  async getListGroupRole() {
+    const list = await this.groupRoleModel.find();
+    return list;
+  }
 }
